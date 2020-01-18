@@ -1,6 +1,6 @@
 Name:            polkit-qt
 Version:         0.103.0
-Release:         10%{?dist}
+Release:         7%{?dist}
 Summary:         Qt bindings for PolicyKit
 
 License:         GPLv2+
@@ -13,9 +13,6 @@ Patch0:          polkit-qt-0.95.1-install-cmake-find.patch
 ## upstream patches
 Patch101: 0001-Sync-FindGObject.cmake-with-the-one-in-kdelibs.patch
 Patch102: 0002-Normalize-connect-using-Qt-s-normalize.patch
-
-# security patches
-Patch200: polkit-qt-0.103-CVE-2014-5033.patch
 
 Source10: macros.polkit-qt
 
@@ -58,7 +55,6 @@ BuildArch: noarch
 
 %patch101 -p1 -b .0001
 %patch102 -p1 -b .0002
-%patch200 -p1 -b .cve-2014-5033
 
 
 %build
@@ -111,15 +107,6 @@ install -p -m644 -D %{SOURCE10} %{buildroot}%{_sysconfdir}/rpm/macros.polkit-qt
 
 
 %changelog
-* Mon Sep 29 2014 Lukáš Tinkl <ltinkl@redhat.com> - 0.103.0-10
-- Resolves: #1147368 (CVE-2014-5033)
-
-* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 0.103.0-9
-- Mass rebuild 2014-01-24
-
-* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 0.103.0-8
-- Mass rebuild 2013-12-27
-
 * Mon Mar 11 2013 Rex Dieter <rdieter@fedoraproject.org> - 0.103.0-7
 - pull in some upstream patches
 - .spec cleanup
