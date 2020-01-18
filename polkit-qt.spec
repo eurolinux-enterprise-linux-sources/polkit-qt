@@ -1,6 +1,6 @@
 Name:            polkit-qt
 Version:         0.103.0
-Release:         7%{?dist}
+Release:         9%{?dist}
 Summary:         Qt bindings for PolicyKit
 
 License:         GPLv2+
@@ -107,6 +107,12 @@ install -p -m644 -D %{SOURCE10} %{buildroot}%{_sysconfdir}/rpm/macros.polkit-qt
 
 
 %changelog
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 0.103.0-9
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 0.103.0-8
+- Mass rebuild 2013-12-27
+
 * Mon Mar 11 2013 Rex Dieter <rdieter@fedoraproject.org> - 0.103.0-7
 - pull in some upstream patches
 - .spec cleanup
